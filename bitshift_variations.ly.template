@@ -1,0 +1,73 @@
+% License: CC BY-SA  https://creativecommons.org/licenses/by-sa/4.0/
+\version "2.18.2"
+
+\language "english"
+
+\header {
+   title = "Bitshift Variations"
+   composer = "Rob Miles"
+   arranger = "arr. Python"
+   tagline = \markup { \center-column { \line { \typewriter \fontsize #-2.5 "echo \"g(i,x,t,o){return((3&x&(i*((3&i>>16?\"BY}6YB6%\":\"Qj}6jQ6%\")[t%8]+51)>>o))<<"}
+                                 \line { \typewriter \fontsize #-2.5 "4);};main(i,n,s){for(i=0;;i++)putchar(g(i,1,n=i>>14,12)+g(i,s=i>>17,n^i>>13,10)+"}
+                                 \line { \typewriter \fontsize #-2.5 "g(i,s/3,n+((i>>11)%3),10)+g(i,s/5,8+n-((i>>10)%3),9));}\"|gcc -xc -&&./a.out|aplay"}
+                                 \line { #(string-append "Music engraving by LilyPond "(lilypond-version))}
+                    }
+            }
+}
+
+global = {
+   \time 4/4
+   \key c \minor
+   \tempo "Digitally" 4=120
+}
+
+cello = {
+   \global
+   \clef bass
+   \repeat unfold 30 {
+   {%- for row in voice[0]|batch(32) %}
+   {{ row|join(' ') }}
+   {%- endfor %}
+   }
+}
+
+viola = {
+   \global
+   \clef treble
+   \repeat unfold 15 {
+   {%- for row in voice[1]|batch(32) %}
+   {{ row|join(' ') }}
+   {%- endfor %}
+   }
+}
+
+musicbox = {
+   \global
+   \clef treble
+   \repeat unfold 5 {
+   {%- for row in voice[2]|batch(32) %}
+   {{ row|join(' ') }}
+   {%- endfor %}
+   }
+}
+
+accordion = {
+   \global
+   \clef treble
+   \repeat unfold 3 {
+   {%- for row in voice[3]|batch(32) %}
+   {{ row|join(' ') }}
+   {%- endfor %}
+   }
+}
+
+\score {
+   <<
+      \new Staff \with {midiInstrument = #"accordion"} { \accordion }
+      \new Staff \with {midiInstrument = #"music box"} { \musicbox }
+      \new Staff \with {midiInstrument = #"viola"} { \viola }
+      \new Staff \with {midiInstrument = #"cello"} { \cello }
+   >>
+   \layout { }
+   \midi { }
+}
