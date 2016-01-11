@@ -1,10 +1,10 @@
-% License: CC BY-SA  https://creativecommons.org/licenses/by-sa/4.0/
+% License: CC BY-NC  https://creativecommons.org/licenses/by-nc/4.0/
 \version "2.18.2"
 
 \language "english"
 
 \header {
-   title = "Bitshift Variations"
+   title = "Bitshift Variations in C Minor"
    composer = "Rob Miles"
    arranger = "arr. Python"
    tagline = \markup { \center-column { \line { \typewriter \fontsize #-2.5 "echo \"g(i,x,t,o){return((3&x&(i*((3&i>>16?\"BY}6YB6%\":\"Qj}6jQ6%\")[t%8]+51)>>o))<<"}

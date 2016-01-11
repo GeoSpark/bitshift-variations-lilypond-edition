@@ -3,7 +3,8 @@
 ## Based on [original code](http://txti.es/bitshiftvariationsincminor) by Rob Miles
 
 See [this video](https://www.youtube.com/watch?v=MqZgoNRERY8) for an explanation
-by Rob himself.
+by Rob himself, and [here](https://soundcloud.com/robertskmiles/bitshift-variations-in-c-minor)
+for the original tune on SoundCloud. My MIDI version can be found [here](https://soundcloud.com/john-donovan-25/bitshift-variations-in-c-minor).
 
 This Python (2.7+) script takes the algorithm developed by Rob Miles to generate a
 four-voice "chiptune" and produces output for [LilyPond](http://www.lilypond.org)
